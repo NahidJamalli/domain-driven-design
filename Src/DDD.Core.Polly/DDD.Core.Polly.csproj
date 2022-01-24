@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net48;netstandard2.1;net5.0</TargetFrameworks>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DDD.Core.Infrastructure.ErrorHandling</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DocumentationFile>bin\Debug\DDD.Core.Polly.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DocumentationFile>bin\Release\DDD.Core.Polly.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Build\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDD.Core.Messages\DDD.Core.Messages.csproj" />
+    <ProjectReference Include="..\DDD.Core\DDD.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Conditions.NetStandard" Version="1.1.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Polly">
+      <Version>7.2.2</Version>
+    </PackageReference>
+  </ItemGroup>
+</Project>
